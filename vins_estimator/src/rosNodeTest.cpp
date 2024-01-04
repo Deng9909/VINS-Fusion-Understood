@@ -59,7 +59,7 @@ void Image1Callback(const sensor_msgs::ImageConstPtr &img_msg) {
 
 cv::Mat RosMsgToCvMat(const sensor_msgs::ImageConstPtr &img_msg) {
     cv_bridge::CvImageConstPtr ptr;
-    if (img_msg->encoding == "8UC1") {
+    if (img_msg->encoding == "8UC1") {         // 8uc1是单通道灰度图像
         sensor_msgs::Image img;
         img.header = img_msg->header;
         img.height = img_msg->height;

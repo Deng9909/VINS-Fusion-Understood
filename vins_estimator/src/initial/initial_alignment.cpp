@@ -191,7 +191,7 @@ void solveGyroscopeBias(map<double, ImageFrame> &_all_img_frames, Vector3d* _Bgs
         A += tmp_A.transpose() * tmp_A;
         b += tmp_A.transpose() * tmp_b;
     }
-    delta_bg = A.ldlt().solve(b);
+    delta_bg = A.ldlt().solve(b);// A.inverse() * b,Cholesky 分解优势在于求逆更快
     // std::cout << "[ WARN ] gyroscope bias initial calibration " << delta_bg.transpose() << std::endl;
     LOG(WARNING) << "gyroscope bias initial calibration: " << delta_bg.transpose();
 

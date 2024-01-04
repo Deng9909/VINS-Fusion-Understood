@@ -33,7 +33,7 @@ bool InitializeExtrinRotation::CalibrationExRotation(vector<pair<Vector3d, Vecto
         Quaterniond r1(Rc[i]);
         Quaterniond r2(Rc_g[i]);
 
-        double angular_distance = 180 / M_PI * r1.angularDistance(r2);
+        double angular_distance = 180 / M_PI * r1.angularDistance(r2);// 两个四元数之间的角度差
         // ROS_DEBUG("%d %f", i, angular_distance);
         printf("[DBG] %d %f", i, angular_distance);
 
